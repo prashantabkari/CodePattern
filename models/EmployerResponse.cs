@@ -21,6 +21,4 @@ public record Employer
 
     public  bool Active { get; init; }
 
-    public bool eligibility { get ; init ;}
-
 }
