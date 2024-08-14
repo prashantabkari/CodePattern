@@ -8,6 +8,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  name: Default
   demands: 
   - Agent.ComputerName -equals prashants-Air
   - Agent.OS -equals Darwin
