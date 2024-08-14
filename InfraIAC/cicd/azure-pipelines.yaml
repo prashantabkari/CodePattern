@@ -1,0 +1,33 @@
+
+parameters:
+- name: environments
+  type: object
+  default: ['dev','qa', 'prd']
+
+variables:
+- template: vars/vars-global.yaml
+
+stages:
+- stage: build
+  jobs:
+    - job: build
+      steps:
+        - template: steps-build.yaml
+- stage: Deploy App Service
+  variables:          
+    - template: vars/vars-dev.yaml
+  jobs:
+  - deployment: DeploymentJob
+    pool:
+      vmImage: ${{ variables.vmImageName }}
+    environment: ${{ variables.environmentName }}
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - template: steps-deployment.yaml
+              parameters:
+                azureServiceConnection: ${{ variables.azureServiceConnection  }}
+                webAppName: ${{ variables.webAppName }}
+                resourceGroup: ${{ variables.resourceGroup}}
+                location: ${{ variables.location }}
