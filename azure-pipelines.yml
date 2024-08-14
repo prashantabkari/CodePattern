@@ -8,6 +8,9 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  demands: 
+  - Agent.ComputerName -equals prashants-Air
+  - Agent.OS -equals Darwin
 
 variables:
   buildConfiguration: 'Release'
