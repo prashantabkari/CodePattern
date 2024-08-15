@@ -26,5 +26,7 @@ steps:
     appType: 'webAppLinux'
     WebAppName: 'EmployerAPIApp'
     packageForLinux: '$(System.DefaultWorkingDirectory)/CodePattern.zip'
-    RuntimeStack: 'DOTNETCORE|3.1'
+    RuntimeStack: 'DOTNETCORE|7.0'
+
+
     
