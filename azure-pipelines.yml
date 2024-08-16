@@ -24,7 +24,7 @@ steps:
     azureSubscription: 'CodePattern'
     appType: 'webAppLinux'
     appName: 'EmployerAPIApp'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(System.DefaultWorkingDirectory)/CodePattern.zip'
 
 
     
